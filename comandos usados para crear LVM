@@ -1,0 +1,12 @@
+      7  cd /dev/
+    8  fdisk sdb
+			   10  pvcreate /dev/sdb1 
+			   vgcreate WWW /dev/sdb1
+			   12  lvcreate WWW -L 7G -n WWW-datos
+			   13  lvextend /dev/WWW/WWW-datos -l+100%FREE
+			   14  mkfs.ext4 /dev/WWW/WWW-datos 
+			   15  mkdir /WWW
+			   25  echo "/dev/mapper/WWW-WWW--datos /WWW ext4 defaults 0 0" >> /etc/fstab
+			   26  mount -a
+			   27  df -h
+

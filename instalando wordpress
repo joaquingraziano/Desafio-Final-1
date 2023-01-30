@@ -1,0 +1,17 @@
+instalando wordpress
+
+   9  cd /tmp/
+   10  wget https://wordpress.org/latest.tar.gz
+   11  tar -zxf latest.tar.gz
+   12  cd wordpress/
+   13  ls
+   14  cp * /WWW/html/ -r
+   15  cd /WWW/html/
+   16  ls
+   17  chown www-data.www-data -R *
+   18  find . -type d -exec chmod 755 {} \;
+   19  find . -type f -exec chmod 644 {} \;
+   20  apt install php
+   21  systemctl restart apache2
+   22  apt-get install php7.4-mysql
+   23  systemctl restart apache2
